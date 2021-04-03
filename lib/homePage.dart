@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_home/home_tab/favourites.dart';
 import 'package:flutter_home/home_tab/popular.dart';
 import 'home_tab/whatsNew.dart';
-// import 'home_tab/what'sNew.dart';
-// import 'package:flutter_home/home_tab/what'
-// import 'package:flutter_home/home_tab/what'sNew.dart';sNew.dart';
 import 'package:flutter_home/shared_ui/navigation.dart';
-// import 'shared_ui/navigation.dart';
+
 class HomePage extends StatefulWidget {
   @override
   _HomePageState createState() => _HomePageState();
@@ -27,6 +24,7 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
       appBar: AppBar(
         title: Text("Explore"),
         actions: [
+
           IconButton(icon: Icon(Icons.search_rounded), onPressed: (){}),
           IconButton(icon: Icon(Icons.more_vert), onPressed: (){})
         ],
