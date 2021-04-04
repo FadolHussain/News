@@ -107,8 +107,9 @@ class WhatsNewState extends State<WhatsNew> {
                   padding: const EdgeInsets.only(left: 16, bottom: 8 , top: 8),
                   child: _drawSectionTitle("Recent Updates"),
                 ),
-                _drawRecentUpdateCard(),
-                _drawRecentUpdateCard(),
+                _drawRecentUpdateCard(Colors.red),
+                _drawRecentUpdateCard(Colors.amber),
+                SizedBox(height: 50,)
               ],
             ),
           )
@@ -182,10 +183,10 @@ class WhatsNewState extends State<WhatsNew> {
       ),
     );
   }
-
-  Widget _drawRecentUpdateCard() {
+  Widget _drawRecentUpdateCard(Color color) {
     return Card(
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             decoration: BoxDecoration(
@@ -197,13 +198,50 @@ class WhatsNewState extends State<WhatsNew> {
             width: double.infinity,
             height: MediaQuery.of(context).size.height * 0.25,
           ),
-          Container(
-            padding: EdgeInsets.only(left: 20 , right: 20 , top: 4, bottom: 4),
-            decoration: BoxDecoration(
-              color: Colors.deepOrange.shade900,
-              borderRadius: BorderRadius.circular(6)
+          Padding(
+            padding: const EdgeInsets.only( top: 16, bottom: 8, left: 16),
+            child: Container(
+              padding: EdgeInsets.only(left: 24 , right: 24 , top: 2, bottom: 2),
+              decoration: BoxDecoration(
+                color: color,
+                borderRadius: BorderRadius.circular(4),
+               ),
+              child: Text(
+                "SPORT" ,
+                style: TextStyle(
+                    color: Colors.white ,
+                    fontWeight: FontWeight.w600
+                ),
+              ),
             ),
-            child: Text("SPORT" , style: TextStyle(color: Colors.white),),
+          ),
+          Padding(
+              padding: EdgeInsets.only(left: 16, right: 16, top: 8, bottom: 8),
+                child: Text(
+                  "Vettel is ferrari number one - hamilton",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600
+                  ),
+                ),
+          ),
+          Padding(
+              padding: EdgeInsets.only(left: 16, right: 16, bottom: 16),
+                child: Row(
+                  children: [
+                    Icon(Icons.timer ,
+                      color: Colors.blueGrey
+                    ),
+                    SizedBox(width: 8,),
+                    Text(
+                      "15 min" ,
+                      style: TextStyle(
+                          color: Colors.blueGrey ,
+                          fontSize: 18
+                      ),
+                    ),
+                  ],
+                ),
           )
         ],
       ),
