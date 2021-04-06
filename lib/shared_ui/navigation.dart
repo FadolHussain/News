@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_home/models/navMenu.dart';
 import 'package:flutter_home/navigation/headLineNews.dart';
 import 'package:flutter_home/homePage.dart';
+import 'package:flutter_home/navigation/instagramFeed.dart';
 import 'package:flutter_home/navigation/twitterFeed.dart';
+import 'package:flutter_home/navigation/instagramFeed.dart';
 class Navigation extends StatefulWidget {
   @override
   _NavigationState createState() => _NavigationState();
@@ -14,7 +16,8 @@ class _NavigationState extends State<Navigation> {
   List<NavMenuItem> navigationMenu = [
     NavMenuItem ( "Explore" , () => HomePage()),
     NavMenuItem("Head line News", () => HeadLineNews()),
-    NavMenuItem("Twitter Feed", () => TwitterFeed())
+    NavMenuItem("Twitter Feed", () => TwitterFeed()),
+    NavMenuItem("Instagram Feed",() => InstagramFeed())
   ];
 
   @override

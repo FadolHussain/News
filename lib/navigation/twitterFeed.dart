@@ -17,14 +17,20 @@ class _TwitterFeedState extends State<TwitterFeed> {
         ],
       ),
       drawer: Navigation(),
-      body: ListView.builder(itemBuilder: (context , position){
-        return Card(
-          child: Column(
-            children: [
-              _cardHeader(),
-              _cardBody(),
-              _cardFooter()
-            ],
+      body: ListView.builder(
+        padding: EdgeInsets.all(8),
+        itemBuilder: (context , position){
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 16),
+          child: Card(
+            child: Column(
+              children: [
+                _cardHeader(),
+                _cardBody(),
+                _drawLine(),
+                _cardFooter()
+              ],
+            ),
           ),
         );
       },
@@ -47,12 +53,26 @@ class _TwitterFeedState extends State<TwitterFeed> {
           children: [
             Row(
               children: [
-                Text("Christina Meyers"),
-                Text("@ch_meyers")
+                Text("Christina Meyers",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w600
+                  ),
+                ),
+                SizedBox(width: 12,),
+                Text("@ch_meyers",
+                  style: TextStyle(
+                      color: Colors.blueGrey
+                  ),
+                )
               ],
             ),
             SizedBox(height: 8,),
-            Text("Fri, 12 May 2017 . 14.30")
+            Text(
+              "Fri, 12 May 2017 . 14.30",
+              style: TextStyle(
+                  color:  Colors.blueGrey
+              ),
+            )
           ],
         )
       ],
@@ -61,10 +81,13 @@ class _TwitterFeedState extends State<TwitterFeed> {
   Widget _cardBody(){
     return Padding(
       padding: const EdgeInsets.only(right: 16, left: 16, bottom: 8),
-      child: Text("we also ralk the futture of robot the advance we also ralk the  of robot the advance",
-      style: TextStyle(color: Colors.black,
+      child: Text(
+        "we also ralk the futture of robot the advance we also ralk the  of robot the advance",
+      style: TextStyle(
+        color: Colors.black,
       fontSize: 18,
-        fontWeight: FontWeight.w600
+        fontWeight: FontWeight.w600,
+        height: 1.2
       ),
       ),
     );
@@ -77,8 +100,17 @@ class _TwitterFeedState extends State<TwitterFeed> {
         children: [
           Row(
             children: [
-              IconButton(icon: Icon(Icons.repeat) , color: Colors.deepOrange, onPressed: () {} ),
-              Text("25",style: TextStyle(fontWeight: FontWeight.bold),),
+              IconButton(
+                  icon: Icon(Icons.repeat) ,
+                  color: Colors.deepOrange,
+                  onPressed: () {} ),
+              Text(
+                "25",
+                style: TextStyle(
+                    color: Colors.blueGrey ,
+                    fontWeight: FontWeight.bold
+                ),
+              ),
             ],
           ),
           Row(
@@ -111,4 +143,12 @@ class _TwitterFeedState extends State<TwitterFeed> {
       ),
     );
   }
+}
+
+Widget _drawLine() {
+  return Container(
+    height: 1,
+    color: Colors.blueGrey,
+    margin: EdgeInsets.only(top: 16),
+  );
 }
